@@ -1,6 +1,6 @@
 import Script from 'next/script'
 import './globals.css'
-import { Inter, Roboto} from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
 
 // const inter = Inter({ subsets: ['latin'] })
