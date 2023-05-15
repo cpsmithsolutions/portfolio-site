@@ -9,7 +9,7 @@ const Social = ({url, name, imageName}: {url: string, name: string, imageName: s
     return (
       <div className="mx-6 cursor-pointer">
         <Link href={url} target="_blank">
-          <div className="flex flex-col items-center w-[50px]">
+          <div className="flex flex-col items-center w-[50px] h-[50px]">
             <div
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}

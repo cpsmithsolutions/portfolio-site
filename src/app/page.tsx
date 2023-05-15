@@ -13,20 +13,18 @@ export default async function Home() {
       accessToken: String(process.env.CONTENTFUL_ACCESS_KEY),
     })
 
-    // Fetch data from Contentful using the client
     const projects = await client.getEntries({
       content_type: 'project',
       //@ts-ignore
       order: '-fields.dateCompleted',
     })
     const profile = await client.getEntries({ content_type: 'profile' })
-    // Return the fetched data
     return {
       profile,
       projects,
     }
   }
-  // Fetch data from Contentful
+
   const { projects, profile } = await fetchContentfulData()
 
   return (
@@ -44,7 +42,7 @@ export default async function Home() {
           <ProjectsComponent data={projects} />
         </div>
       </div>
-      <div className="pb-10 flex flex-col justify-center w-[100vw]">
+      <div className="pb-6 flex flex-col justify-center w-[100vw]">
         <Name data={profile} />
         <Socials />
       </div>
