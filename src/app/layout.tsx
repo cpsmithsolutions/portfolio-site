@@ -8,14 +8,16 @@ const roboto = Roboto({
 
 export const metadata = {
   title: 'Clark Smith Full Stack Developer',
-  description: 'The Portfolio site of Clark Smith, Full Stack Developer',
+  description:
+    'The portfolio site of full stack developer Clark Smith, check out some of the projects Clark has built!',
   creator: 'Clark Smith',
   author: 'Clark Smith',
   type: 'website',
   siteName: 'Clark Smith Full Stack Developer',
   openGraph: {
     title: 'Clark Smith Full Stack Developer',
-    description: 'The Portfolio site of Clark Smith, Full Stack Developer',
+    description:
+      'The portfolio site of full stack developer Clark Smith, check out some of the projects Clark has built!',
     url: 'https://www.clarksmith.dev',
     siteName: 'Clark Smith Full Stack Developer',
     images: [
