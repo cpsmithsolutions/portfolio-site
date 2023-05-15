@@ -6,12 +6,10 @@ import Image from "next/image"
 const ProfileInfo = ({data}: {data: any}) => {
     const profile = data.items[0].fields
 
-    console.log('URL', `https:${profile.imageUrl.fields.file.url}`)
-
 return (
   <div>
     <motion.div
-      className="absolute left-[130px] top-[60px] sm:left-[160px] sm:top-[78px] lg:left-[200px] lg:top-[100px] xl:left-[235px]"
+      className="absolute left-[130px] top-[60px] sm:left-[170px] sm:top-[87px] lg:left-[200px] lg:top-[100px] xl:left-[235px]"
       initial={{ opacity: 0, x: '300px' }}
       animate={{ opacity: 1, x: '0px' }}
       transition={{ duration: 1.5, delay: 1 }}
