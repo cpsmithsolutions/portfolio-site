@@ -6,6 +6,8 @@ import Image from "next/image"
 const ProfileInfo = ({data}: {data: any}) => {
     const profile = data.items[0].fields
 
+    console.log('URL', `https:${profile.imageUrl.fields.file.url}`)
+
 return (
   <div>
     <motion.div

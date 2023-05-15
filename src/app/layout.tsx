@@ -1,4 +1,3 @@
-'use client'
 import './globals.css'
 import { Roboto } from 'next/font/google'
 
@@ -19,12 +18,12 @@ export const metadata = {
     siteName: 'Clark Smith Full Stack Developer',
     images: [
       {
-        url: 'https://clarksmith.dev/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmrg9gspwlszz%2F7lPe1ziYbXKC1JBCEja3lG%2F5449926b85a176382fdbc2e9a3ab85b5%2Fprofile-pic-2.jpeg&w=256&q=75',
+        url: 'https://images.ctfassets.net/mrg9gspwlszz/7lPe1ziYbXKC1JBCEja3lG/5449926b85a176382fdbc2e9a3ab85b5/profile-pic-2.jpeg',
         width: 600,
         height: 600,
       },
       {
-        url: 'https://clarksmith.dev/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmrg9gspwlszz%2F7lPe1ziYbXKC1JBCEja3lG%2F5449926b85a176382fdbc2e9a3ab85b5%2Fprofile-pic-2.jpeg&w=256&q=75',
+        url: 'https://images.ctfassets.net/mrg9gspwlszz/7lPe1ziYbXKC1JBCEja3lG/5449926b85a176382fdbc2e9a3ab85b5/profile-pic-2.jpeg',
         width: 1600,
         height: 1600,
         alt: 'preview image',
