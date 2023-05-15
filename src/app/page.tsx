@@ -38,7 +38,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className=" text-[#f5f5f5] p-8 sm:p-16 sm:pt-[72px]  lg:p-24 xl:px-32">
+      <div className=" text-[#f5f5f5] p-8 sm:p-16 sm:pt-[72px] lg:p-24 xl:px-[128px]">
         <div className="flex flex-col justify-center">
           <ProfileInfo data={profile} />
           <ProjectsComponent data={projects} />

@@ -18,7 +18,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
   }, [isMediumSize])
 
   return (
-    <motion.div className="py-4 flex flex-col justify-center items-center">
+    <motion.div className="py-2 flex flex-col justify-center items-center">
       <Link href={data.projectUrl} target="_blank">
         <h3 className="text-[24px] md:text-[32px] my-4 text-center transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
           {data.title}
@@ -66,15 +66,17 @@ const ProjectComponent = ({ data }: { data: any }) => {
           </div>
         </Link>
       </div>
-      <div>
-        {data.summaryDescription && (
-          <div className="mt-2 w-[100%]">{data.summaryDescription}</div>
-        )}
-      </div>
-      <div className="mt-2 w-[100%] sm:px-2 md:px-6">
-        {data.description.map((d: any) => (
-          <p className="pt-1" key={d}>{`• ${d}`}</p>
-        ))}
+      <div className="flex flex-col max-w-4xl justify-center">
+        <div>
+          {data.summaryDescription && (
+            <div className="mt-2 ">{data.summaryDescription}</div>
+          )}
+        </div>
+        <div className="mt-2 ">
+          {data.description.map((d: any) => (
+            <p className="pt-1" key={d}>{`• ${d}`}</p>
+          ))}
+        </div>
       </div>
     </motion.div>
   )

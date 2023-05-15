@@ -10,7 +10,7 @@ const ProjectsComponent = ({ data }: { data: any }) => {
         animate={{ opacity: 1, x: '0px' }}
         transition={{ duration: 1, delay: 1.5 }}
       >
-        <h1 className="text-[32px] md:text-[48px] mt-6 font-bold">Projects</h1>
+        <h1 className="text-[32px] md:text-[48px] mt-3 font-bold">Projects</h1>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: '300px' }}

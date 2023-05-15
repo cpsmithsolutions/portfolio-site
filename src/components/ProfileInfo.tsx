@@ -41,7 +41,7 @@ return (
       animate={{ opacity: 1, y: '0px' }}
       transition={{ duration: 1, delay: 0 }}
     >
-      <h2 className="mt-4 text-[24px] md:text-[32px] ">
+      <h2 className=" mt-4 text-[24px] md:text-[32px] ">
         {profile.description}
       </h2>
       <div>
