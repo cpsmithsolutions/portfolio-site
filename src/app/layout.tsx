@@ -10,6 +10,9 @@ export const metadata = {
   title: 'Clark Smith Full Stack Developer',
   description: 'The Portfolio site of Clark Smith, Full Stack Developer',
   creator: 'Clark Smith',
+  author: 'Clark Smith',
+  type: 'website',
+  siteName: 'Clark Smith Full Stack Developer',
   openGraph: {
     title: 'Clark Smith Full Stack Developer',
     description: 'The Portfolio site of Clark Smith, Full Stack Developer',
