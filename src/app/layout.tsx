@@ -19,13 +19,13 @@ export const metadata = {
     siteName: 'Clark Smith Full Stack Developer',
     images: [
       {
-        url: '/images/preview.jpg',
-        width: 800,
+        url: 'https://clarksmith.dev/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmrg9gspwlszz%2F7lPe1ziYbXKC1JBCEja3lG%2F5449926b85a176382fdbc2e9a3ab85b5%2Fprofile-pic-2.jpeg&w=256&q=75',
+        width: 600,
         height: 600,
       },
       {
-        url: '/images/preview.jpg',
-        width: 1800,
+        url: 'https://clarksmith.dev/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fmrg9gspwlszz%2F7lPe1ziYbXKC1JBCEja3lG%2F5449926b85a176382fdbc2e9a3ab85b5%2Fprofile-pic-2.jpeg&w=256&q=75',
+        width: 1600,
         height: 1600,
         alt: 'preview image',
       },
