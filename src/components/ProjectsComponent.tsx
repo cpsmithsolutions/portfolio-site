@@ -15,7 +15,7 @@ const ProjectsComponent = ({ data }: { data: any }) => {
       <motion.div
         initial={{ opacity: 0, y: '300px' }}
         animate={{ opacity: 1, y: '0px' }}
-        transition={{ duration: 1, delay: 3 }}
+        transition={{ duration: 1, delay: 2 }}
       >
         {data.items.map((d: any) => (
           <ProjectComponent key={d.sys.id} data={d.fields} />
