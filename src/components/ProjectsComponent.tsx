@@ -13,6 +13,7 @@ const ProjectsComponent = ({ data }: { data: any }) => {
         <h1 className="text-[32px] md:text-[48px] mt-3 font-bold">Projects</h1>
       </motion.div>
       <motion.div
+        className="flex flex-col"
         initial={{ opacity: 0, y: '300px' }}
         animate={{ opacity: 1, y: '0px' }}
         transition={{ duration: 1, delay: 2 }}
