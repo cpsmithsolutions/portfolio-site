@@ -71,7 +71,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
             </div>
           </Link>
         </div>
-        <div className="flex flex-col text-[14px] lg:text-[16px] sm:pl-4">
+        <div className="flex flex-col text-[14px] lg:text-[16px] sm:pl-4 xl:pl-6">
           <div>
             {data.summaryDescription && (
               <div className="mb-2">{data.summaryDescription}</div>

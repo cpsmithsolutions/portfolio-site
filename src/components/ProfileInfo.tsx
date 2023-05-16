@@ -45,7 +45,7 @@ return (
         {profile.description}
       </h2>
       <div>
-        <p className="mt-2 md:text-[20px]">{profile.bio}</p>
+        <p className="mt-2 md:text-[20px] max-w-7xl">{profile.bio}</p>
       </div>
     </motion.div>
   </div>
