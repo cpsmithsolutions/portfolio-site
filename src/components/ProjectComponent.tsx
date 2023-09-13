@@ -17,7 +17,6 @@ const ProjectComponent = ({ data }: { data: any }) => {
     setIsMedium(isMediumSize)
   }, [isMediumSize])
 
-  console.log({ isMedium })
 
   return (
     <motion.div className="flex flex-col max-w-6xl  justify-center items-center">
@@ -27,6 +26,15 @@ const ProjectComponent = ({ data }: { data: any }) => {
             {data.title}
           </h3>
         </Link>
+        {data.githubUrl ? (
+          <Link href={data.githubUrl} target="_blank">
+            <p className="mt-7 ml-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
+              GitHub
+            </p>
+          </Link>
+        ) : (
+          ''
+        )}
       </div>
       <div className="flex flex-col w-[100%] ml:flex-row">
         <div className="flex justify-center mb-4">
