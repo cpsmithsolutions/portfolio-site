@@ -28,7 +28,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
           </h3>
         </Link>
       </div>
-      <div className="flex flex-col ml:flex-row">
+      <div className="flex flex-col w-[100%] ml:flex-row">
         <div className="flex justify-center mb-4">
           <Link href={data.projectUrl} target="_blank">
             <div
