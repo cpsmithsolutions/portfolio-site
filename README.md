@@ -11,7 +11,7 @@ To run the App locally, follow these steps:
 	```CONTENTFUL_ACCESS_KEY='your_contentful_access_key'```
 	```CONTENTFUL_SPACE_ID='your_contentful_space_id'```
 	
-4.  Note:Content model must match contentful fields in this Front End Application or app won't work
+4.  Note:Content model must match Contentful fields in this Front End Application or app won't work
   
 5. Clone this repository to your local machine:
 
