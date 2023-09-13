@@ -21,7 +21,7 @@ const Socials = () => {
         name="GitHub"
       />
       <Social
-        url="https://resume.creddle.io/resume/g2iz5ls395i"
+        url="https://docs.google.com/document/d/12U0CxsVLUzWVM7f8oBnEmwnLeo0BPXO2ylzb8Rwfy6I/edit?usp=sharing"
         imageName="resume-96.png"
         name="Resume"
       />
