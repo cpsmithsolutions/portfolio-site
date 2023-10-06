@@ -17,6 +17,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
     setIsMedium(isMediumSize)
   }, [isMediumSize])
 
+  // comment
 
   return (
     <motion.div className="flex flex-col max-w-6xl  justify-center items-center">
@@ -69,7 +70,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
                     transition={{ type: 'spring', duration: 1.25 }}
                     exit={{ y: '0px', opacity: 0 }}
                   >
-                    <div className="absolute text-[#6082B6] bg-white  box-shadow opacity-[.2] h-[70px] font-[600] w-[100%]"></div>
+                    <div className="absolute text-[#6082B6] bg-white  box-shadow opacity-[.8] h-[70px] font-[600] w-[100%]"></div>
                     <div className="absolute text-[19px] text-[#6082B6] mt-3 font-[600] w-[100%] transition duration-200 ease-in-out ease-in-out hover:text-[#03a9f4]">
                       Visit Website
                     </div>
