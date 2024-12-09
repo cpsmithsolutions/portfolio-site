@@ -21,9 +21,6 @@ To run the App locally, follow these steps:
    
 6. Navigate to the project directory:
 
-	```bash 
-	cd photo-gallery
-	```
 7. Start the development server:
 
 	```bash 

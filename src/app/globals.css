@@ -40,3 +40,8 @@ transform: translateX(-50%);
 
 
 }
+
+img {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
