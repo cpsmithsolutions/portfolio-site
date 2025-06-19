@@ -1,5 +1,5 @@
 
-'use client'
+
 import ProfileInfo from "../components/ProfileInfo"
 import ProjectsComponent from '@/components/ProjectsComponent'
 import { createClient } from 'contentful'
