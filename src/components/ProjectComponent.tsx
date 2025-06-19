@@ -22,11 +22,18 @@ const ProjectComponent = ({ data }: { data: any }) => {
   return (
     <motion.div className="flex flex-col max-w-6xl  justify-center items-center">
       <div className="flex w-full justify-center ml:justify-start">
-        <Link href={data.projectUrl} target="_blank">
-          <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
+        {data.projectUrl ? (
+          <Link href={data.projectUrl} target="_blank">
+            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
+              {data.title}
+            </h3>
+          </Link>
+        ) : (
+          <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out">
             {data.title}
           </h3>
-        </Link>
+        )}
+
         {data.githubUrl ? (
           <Link href={data.githubUrl} target="_blank">
             <p className="mt-7 ml-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
