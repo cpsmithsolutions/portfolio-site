@@ -4,8 +4,6 @@ import ProjectComponent from "./ProjectComponent"
 
 const ProjectsComponent = ({ data }: { data: any }) => {
 
-
-  console.log({ data })
   return (
     <div>
       <motion.div

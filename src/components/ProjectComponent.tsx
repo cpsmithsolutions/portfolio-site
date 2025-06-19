@@ -10,8 +10,6 @@ const ProjectComponent = ({ data }: { data: any }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [showHoverPopup, setShowHoverPopup] = useState<boolean>(false) // Hover popup state
 
-  console.log({ showHoverPopup })
-
   const isMediumSize = useMediaQuery({
     query: '(min-width: 768px)',
   })
