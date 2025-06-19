@@ -54,10 +54,10 @@ const ProjectComponent = ({ data }: { data: any }) => {
           ''
         )}
       </div>
-      <div className="flex flex-col w-[100%] ml:flex-row">
+      <div className="flex flex-col w-[100%] h-[100%] ml:flex-row">
         <div className="flex justify-center mb-4">
           <div
-            className="border border-[#818589] rounded-md overflow-hidden w-[325px] md:w-[400px] cursor-pointer  transition duration-200 ease-in-out ease-in-out hover:opacity-[.7] cursor-pointer"
+            className="relative border border-[#818589] rounded-md h-100% overflow-hidden w-[323px] h-[182px] md:w-[400px] md:h-[224px] transition duration-200 ease-in-out ease-in-out hover:opacity-[.7] cursor-pointer"
             onClick={handleImageClick}
             onMouseEnter={() => setShowHoverPopup(true)} // Show popup on hover
             onMouseLeave={() => setShowHoverPopup(false)} // Hide popup when hover ends
@@ -130,14 +130,12 @@ const ProjectComponent = ({ data }: { data: any }) => {
                   <Link
                     href={data.projectUrl}
                     target="_blank"
-                    className="text-white text-lg font-bold bg-[#6082B6] px-4 py-2 rounded-md hover:bg-[#506a9b] transition duration-300"
+                    className="text-white text-lg font-bold bg-gray-500 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300"
                   >
                     Visit Site
                   </Link>
                 ) : (
-                  <p className="text-white text-lg font-bold">
-                    Site No Longer Available
-                  </p>
+                  ''
                 )}
               </div>
             </div>
