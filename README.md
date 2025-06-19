@@ -16,7 +16,7 @@ To run the App locally, follow these steps:
 5. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/clarkpsmith/portfolio-site.git
+   git clone https://github.com/cpsmithsolutions/portfolio-site.git
    ```
    
 6. Navigate to the project directory:

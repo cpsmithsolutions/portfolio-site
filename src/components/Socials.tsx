@@ -16,7 +16,7 @@ const Socials = () => {
         name="LinkedIn"
       />
       <Social
-        url="https://github.com/clarkpsmith"
+        url="https://github.com/cpsmithsolutions"
         imageName="github-mark-white.svg"
         name="GitHub"
       />
