@@ -26,7 +26,7 @@ const Socials = () => {
         name="Resume"
       />
       <Social
-        url="mailto:clark.smith79@gmail.com"
+        url="mailto:cpsmithsolutions@gmail.com"
         imageName="email-icon-128.png"
         name="Email"
       />

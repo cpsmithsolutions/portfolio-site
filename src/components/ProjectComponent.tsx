@@ -20,7 +20,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
   // comment
 
   return (
-    <motion.div className="flex flex-col max-w-6xl  justify-center items-center">
+    <motion.div className="flex flex-col max-w-6xl justify-center items-center">
       <div className="flex w-full justify-center ml:justify-start">
         {data.projectUrl ? (
           <Link href={data.projectUrl} target="_blank">
@@ -29,7 +29,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
             </h3>
           </Link>
         ) : (
-          <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out">
+          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out">
             {data.title}
           </h3>
         )}
@@ -46,7 +46,67 @@ const ProjectComponent = ({ data }: { data: any }) => {
       </div>
       <div className="flex flex-col w-[100%] ml:flex-row">
         <div className="flex justify-center mb-4">
-          <Link href={data.projectUrl} target="_blank">
+          {data.projectUrl ? (
+            <Link href={data.projectUrl} target="_blank">
+              <div
+                onMouseOver={() => setShowVisitSite(true)}
+                onMouseLeave={() => setShowVisitSite(false)}
+                className="border border-[#818589] rounded-md overflow-hidden w-[325px] md:w-[400px] cursor-pointer  transition duration-200 ease-in-out ease-in-out hover:opacity-[.7] "
+              >
+                {isMedium ? (
+                  <Image
+                    src={`https:${data.imageUrl.fields.file.url}`}
+                    width={400}
+                    height={250}
+                    alt="pog digital image"
+                  />
+                ) : (
+                  <Image
+                    src={`https:${data.imageUrl.fields.file.url}`}
+                    width={325}
+                    height={125}
+                    alt="pog digital image"
+                  />
+                )}
+
+                <AnimatePresence>
+                  {showVisitSite && (
+                    <motion.div
+                      className="text-center"
+                      initial={{ opacity: 0, y: '0px' }}
+                      animate={{ opacity: 1, y: '-50px' }}
+                      transition={{ type: 'spring', duration: 1.25 }}
+                      exit={{ y: '0px', opacity: 0 }}
+                    >
+                      <div className="absolute text-[#6082B6] bg-white  box-shadow opacity-[.8] h-[70px] font-[600] w-[100%]"></div>
+                      <div className="absolute text-[19px] text-[#6082B6] mt-3 font-[600] w-[100%] transition duration-200 ease-in-out ease-in-out hover:text-[#03a9f4]">
+                        Visit Website
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </Link>
+          ) : (
+            <div className="border border-[#818589] rounded-md overflow-hidden w-[325px] md:w-[400px]">
+              {isMedium ? (
+                <Image
+                  src={`https:${data.imageUrl.fields.file.url}`}
+                  width={400}
+                  height={250}
+                  alt=" project image"
+                />
+              ) : (
+                <Image
+                  src={`https:${data.imageUrl.fields.file.url}`}
+                  width={325}
+                  height={125}
+                  alt="project image"
+                />
+              )}
+            </div>
+          )}
+          {/* <Link href={data.projectUrl} target="_blank">
             <div
               onMouseOver={() => setShowVisitSite(true)}
               onMouseLeave={() => setShowVisitSite(false)}
@@ -85,7 +145,7 @@ const ProjectComponent = ({ data }: { data: any }) => {
                 )}
               </AnimatePresence>
             </div>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex flex-col text-[14px] lg:text-[16px] sm:pl-4 xl:pl-6">
           <div>
