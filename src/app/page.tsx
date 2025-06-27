@@ -6,6 +6,8 @@ import { createClient } from 'contentful'
 import Socials from '@/components/Socials'
 import Name from '@/components/Name'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
 
   async function fetchContentfulData() {
