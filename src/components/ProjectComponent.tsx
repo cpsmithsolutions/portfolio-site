@@ -5,7 +5,11 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { useMediaQuery } from 'react-responsive'
 
-const ProjectComponent = ({ data }: { data: any }) => {
+interface ProfileData {
+  [key: string]: any
+}
+
+const ProjectComponent = ({ data }: { data: ProfileData }) => {
   const [isMedium, setIsMedium] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [showHoverPopup, setShowHoverPopup] = useState<boolean>(false) // Hover popup state
@@ -32,12 +36,12 @@ const ProjectComponent = ({ data }: { data: any }) => {
       <div className="flex w-full justify-center ml:justify-start">
         {data.projectUrl ? (
           <Link href={data.projectUrl} target="_blank">
-            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
+            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
               {data.title}
             </h3>
           </Link>
         ) : (
-          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 w-[100%] font-bold transition duration-500 ease-in-out ease-in-out">
+          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 font-bold transition duration-500 ease-in-out ease-in-out">
             {data.title}
           </h3>
         )}
