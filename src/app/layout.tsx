@@ -7,19 +7,19 @@ const roboto = Roboto({
 })
 
 export const metadata = {
-  title: 'Clark Smith Full Stack Developer',
+  title: 'Clark Smith Full Stack Engineer',
   description:
-    'The portfolio site of full stack developer Clark Smith, check out some of the projects Clark has built!',
+    'The portfolio site of full stack engineer Clark Smith, check out some of the projects Clark has built!',
   creator: 'Clark Smith',
   author: 'Clark Smith',
   type: 'website',
-  siteName: 'Clark Smith Full Stack Developer',
+  siteName: 'Clark Smith Full Stack Engineer',
   openGraph: {
-    title: 'Clark Smith Full Stack Developer',
+    title: 'Clark Smith Full Stack Engineer',
     description:
-      'The portfolio site of full stack developer Clark Smith, check out some of the projects Clark has built!',
+      'The portfolio site of full stack engineer Clark Smith, check out some of the projects Clark has built!',
     url: 'https://www.clarksmith.dev',
-    siteName: 'Clark Smith Full Stack Developer',
+    siteName: 'Clark Smith Full Stack Engineer',
     images: [
       {
         url: 'https://images.ctfassets.net/mrg9gspwlszz/7lPe1ziYbXKC1JBCEja3lG/5449926b85a176382fdbc2e9a3ab85b5/profile-pic-2.jpeg',
