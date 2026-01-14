@@ -162,7 +162,7 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
                   <Link
                     href={data.projectUrl}
                     target="_blank"
-                    className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-400 to-indigo-600 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 transform hover:scale-103 transition-all duration-300"
+                    className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-400 to-indigo-600 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 origin-bottom transform hover:scale-103 transition-all duration-300"
                   >
                     Visit This Website
                   </Link>

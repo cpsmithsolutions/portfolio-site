@@ -11,7 +11,7 @@ const Social = ({url, name, imageName}: {url: string, name: string, imageName: s
         <Link href={url} target="_blank">
           <div className="flex flex-col items-center w-[50px] h-[50px]">
             <div
-              className="transition-all duration-300 transform hover:scale-110"
+              className="transition-all duration-300 transform origin-bottom hover:scale-110"
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
             >
