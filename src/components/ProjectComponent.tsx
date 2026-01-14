@@ -39,19 +39,19 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
       <div className="flex w-full justify-center ml:justify-start">
         {data.projectUrl ? (
           <Link href={data.projectUrl} target="_blank">
-            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
+            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 font-bold transition duration-300 ease-in-out ease-in-out hover:text-blue-400">
               {data.title}
             </h3>
           </Link>
         ) : (
-          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 font-bold transition duration-500 ease-in-out ease-in-out">
+          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 font-bold transition duration-300 ease-in-out ease-in-out">
             {data.title}
           </h3>
         )}
 
         {data.githubUrl ? (
           <Link href={data.githubUrl} target="_blank">
-            <p className="mt-7 ml-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-[#6082B6]">
+            <p className="mt-7 ml-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-blue-400">
               GitHub
             </p>
           </Link>
@@ -85,10 +85,10 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
             <AnimatePresence>
               {showHoverPopup && (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
                   className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-10 pointer-events-none"
                 >
                   <div className="bg-black bg-opacity-60 px-4 py-2 rounded text-white text-sm font-bold">
@@ -154,7 +154,7 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
                   <Link
                     href={data.projectUrl}
                     target="_blank"
-                    className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-500 to-indigo-700 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 transform hover:scale-103 transition-all duration-300"
+                    className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-400 to-indigo-600 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 transform hover:scale-103 transition-all duration-300"
                   >
                     Visit Site
                   </Link>
