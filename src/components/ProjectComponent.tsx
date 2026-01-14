@@ -157,14 +157,14 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
                 />
               </div>
               {/* Visit Site Link or Fallback Text */}
-              <div className="absolute bottom-4 lg:bottom-8 w-full flex justify-center items-center">
+              <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 flex justify-end items-end">
                 {data.projectUrl ? (
                   <Link
                     href={data.projectUrl}
                     target="_blank"
                     className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-400 to-indigo-600 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 transform hover:scale-103 transition-all duration-300"
                   >
-                    Visit Site
+                    Visit This Website
                   </Link>
                 ) : (
                   ''
