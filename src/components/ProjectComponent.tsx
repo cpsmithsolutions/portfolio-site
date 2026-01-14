@@ -13,6 +13,7 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
   const [isMedium, setIsMedium] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [showHoverPopup, setShowHoverPopup] = useState<boolean>(false) // Hover popup state
+  const [imgLoading, setImgLoading] = useState<boolean>(false) // Modal image loading state
 
   const isMediumSize = useMediaQuery({
     query: '(min-width: 768px)',
@@ -24,10 +25,12 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
 
   const handleImageClick = () => {
     setIsModalOpen(true) // Open the modal when the image is clicked
+    setImgLoading(true) // Reset loading state when opening modal
   }
 
   const handleCloseModal = () => {
     setIsModalOpen(false) // Close the modal
+    setImgLoading(false) // Reset loading state when closing modal
   }
   // comment
 
@@ -59,7 +62,7 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
       <div className="flex flex-col w-[100%] h-[100%] ml:flex-row">
         <div className="flex justify-center mb-4">
           <div
-            className="relative border border-[#818589] rounded-md h-100% overflow-hidden w-[323px] h-[182px] md:w-[400px] md:h-[224px] transition duration-200 ease-in-out ease-in-out hover:opacity-[.7] cursor-pointer"
+            className="relative border border-[#818589] rounded-md h-100% overflow-hidden w-[323px] h-[182px] md:w-[400px] md:h-[224px]  cursor-pointer"
             onClick={handleImageClick}
             onMouseEnter={() => setShowHoverPopup(true)} // Show popup on hover
             onMouseLeave={() => setShowHoverPopup(false)} // Hide popup when hover ends
@@ -79,14 +82,21 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
                 alt="project image"
               />
             )}
-            {showHoverPopup && (
-              // <div className="absolute -mt-8 top-0 left-0 w-[325px] z-10 md:w-[400px] flex justify-center items-center">
-              <div className="relative">
-                <div className="absolute w-full -mt-6 text-white text-sm font-bold flex justify-center">
-                  <p>Click to View Full-Screen</p>
-                </div>
-              </div>
-            )}
+            <AnimatePresence>
+              {showHoverPopup && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-0 left-0 w-full h-full flex justify-center items-center z-10 pointer-events-none"
+                >
+                  <div className="bg-black bg-opacity-60 px-4 py-2 rounded text-white text-sm font-bold">
+                    Click to View Full Screen
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
         <div className="flex flex-col text-[14px] lg:text-[16px] sm:pl-4 xl:pl-6">
@@ -114,25 +124,37 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
           >
             <div className="relative">
               <button
-                className="absolute top-4 right-4 text-white text-2xl"
+                className="absolute top-4 right-4 text-white text-2xl z-20 pointer-events-auto"
                 onClick={handleCloseModal} // Close modal on button click
               >
                 ✕
               </button>
-              <Image
-                src={`https:${data.imageUrl.fields.file.url}`}
-                width={1200}
-                height={800}
-                alt="Expanded project image"
-                className="rounded-md"
-              />
+              {/* Modal Image with Loading Spinner */}
+              <div className="relative w-screen flex justify-center items-center">
+                {imgLoading && (
+                  <div className="absolute inset-0 flex justify-center items-center z-10 pointer-events-none">
+                    <div className="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                )}
+                <Image
+                  src={`https:${data.imageUrl.fields.file.url}`}
+                  width={1920}
+                  height={1080}
+                  quality={100}
+                  alt="Expanded project image"
+                  className={`rounded-md w-screen h-auto max-h-screen object-contain ${
+                    imgLoading ? 'opacity-0' : 'opacity-100'
+                  } transition-opacity duration-500`}
+                  onLoadingComplete={() => setImgLoading(false)}
+                />
+              </div>
               {/* Visit Site Link or Fallback Text */}
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <div className="absolute bottom-4 lg:bottom-8 w-full flex justify-center items-center">
                 {data.projectUrl ? (
                   <Link
                     href={data.projectUrl}
                     target="_blank"
-                    className="text-white text-lg font-bold bg-gray-500 px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300"
+                    className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-500 to-indigo-700 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 transform hover:scale-103 transition-all duration-300"
                   >
                     Visit Site
                   </Link>
