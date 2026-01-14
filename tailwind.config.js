@@ -26,6 +26,8 @@ module.exports = {
     extend: {
       scale: {
         103: '1.03',
+        102: '1.02',
+        101: '1.01',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

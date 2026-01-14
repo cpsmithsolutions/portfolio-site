@@ -39,19 +39,19 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
       <div className="flex w-full justify-center ml:justify-start">
         {data.projectUrl ? (
           <Link href={data.projectUrl} target="_blank">
-            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 font-bold transition duration-300 ease-in-out ease-in-out hover:text-blue-400">
+            <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 origin-bottom font-bold transition-all duration-700 transform hover:scale-101 ease-in-out ease-in-out hover:text-blue-400">
               {data.title}
             </h3>
           </Link>
         ) : (
-          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 font-bold transition duration-300 ease-in-out ease-in-out">
+          <h3 className="text-[28px] text-left md:text-[34px] my-2 mb-4 font-bold">
             {data.title}
           </h3>
         )}
 
         {data.githubUrl ? (
           <Link href={data.githubUrl} target="_blank">
-            <p className="mt-7 ml-4 font-bold transition duration-500 ease-in-out ease-in-out hover:text-blue-400">
+            <p className="mt-7 ml-4 font-bold transition-all duration-700 origin-bottom transform ease-in-out ease-in-out hover:text-blue-400">
               GitHub
             </p>
           </Link>
