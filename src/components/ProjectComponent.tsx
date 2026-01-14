@@ -23,6 +23,14 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
     setIsMedium(isMediumSize)
   }, [isMediumSize])
 
+  // Preload full-screen image after mount
+  useEffect(() => {
+    if (data?.imageUrl?.fields?.file?.url) {
+      const img = new window.Image()
+      img.src = `https:${data.imageUrl.fields.file.url}`
+    }
+  }, [data?.imageUrl?.fields?.file?.url])
+
   const handleImageClick = () => {
     setIsModalOpen(true) // Open the modal when the image is clicked
     setImgLoading(true) // Reset loading state when opening modal
