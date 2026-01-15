@@ -1,8 +1,27 @@
 "use client"
 import { motion } from "framer-motion"
 import ProjectComponent from "./ProjectComponent"
+import React, { useState, useCallback, useEffect } from 'react'
 
 const ProjectsComponent = ({ data }: { data: any }) => {
+  const [anyModalOpen, setAnyModalOpen] = useState(false)
+
+  // Lock scroll when any modal is open
+  useEffect(() => {
+    if (anyModalOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [anyModalOpen])
+
+  // Callback to set modal open/close from child
+  const handleModalState = useCallback((open: boolean) => {
+    setAnyModalOpen(open)
+  }, [])
 
   return (
     <div>
@@ -20,7 +39,11 @@ const ProjectsComponent = ({ data }: { data: any }) => {
         transition={{ duration: 1, delay: 2 }}
       >
         {data.items.map((d: any) => (
-          <ProjectComponent key={d.sys.id} data={d.fields} />
+          <ProjectComponent
+            key={d.sys.id}
+            data={d.fields}
+            onModalState={handleModalState}
+          />
         ))}
       </motion.div>
     </div>

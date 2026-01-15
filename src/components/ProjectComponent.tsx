@@ -9,7 +9,13 @@ interface ProfileData {
   [key: string]: any
 }
 
-const ProjectComponent = ({ data }: { data: ProfileData }) => {
+const ProjectComponent = ({
+  data,
+  onModalState,
+}: {
+  data: ProfileData
+  onModalState?: (open: boolean) => void
+}) => {
   const [isMedium, setIsMedium] = useState(true)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [showHoverPopup, setShowHoverPopup] = useState<boolean>(false) // Hover popup state
@@ -32,13 +38,15 @@ const ProjectComponent = ({ data }: { data: ProfileData }) => {
   }, [data?.imageUrl?.fields?.file?.url])
 
   const handleImageClick = () => {
-    setIsModalOpen(true) // Open the modal when the image is clicked
-    setImgLoading(true) // Reset loading state when opening modal
+    setIsModalOpen(true)
+    setImgLoading(true)
+    if (onModalState) onModalState(true)
   }
 
   const handleCloseModal = () => {
-    setIsModalOpen(false) // Close the modal
-    setImgLoading(false) // Reset loading state when closing modal
+    setIsModalOpen(false)
+    setImgLoading(false)
+    if (onModalState) onModalState(false)
   }
   // comment
 
