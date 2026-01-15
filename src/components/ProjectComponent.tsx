@@ -140,7 +140,8 @@ const ProjectComponent = ({
           >
             <div className="relative">
               <button
-                className="absolute top-4 right-4 text-white text-2xl z-20 pointer-events-auto"
+                aria-label="Close Modal"
+                className="absolute top-4 right-4 text-white bg-black bg-opacity-60  px-2 rounded-md text-2xl z-20 pointer-events-auto"
                 onClick={handleCloseModal} // Close modal on button click
               >
                 ✕
