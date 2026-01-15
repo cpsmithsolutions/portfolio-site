@@ -24,7 +24,7 @@ const ProjectsComponent = ({ data }: { data: any }) => {
   }, [])
 
   return (
-    <div>
+    <div aria-label="Projects Section">
       <motion.div
         initial={{ opacity: 0, x: '-300px' }}
         animate={{ opacity: 1, x: '0px' }}

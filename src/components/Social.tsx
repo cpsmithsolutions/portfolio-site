@@ -8,15 +8,17 @@ const Social = ({url, name, imageName}: {url: string, name: string, imageName: s
 
     return (
       <div className="mx-6 cursor-pointer">
-        <Link href={url} target="_blank">
+        <Link href={url} target="_blank" aria-label={name} rel="noopener noreferrer">
           <div className="flex flex-col items-center w-[50px] h-[50px]">
             <div
               className="transition-all duration-300 transform origin-bottom hover:scale-110"
               onMouseEnter={() => setShowText(true)}
               onMouseLeave={() => setShowText(false)}
+              role="img"
+              aria-label={name}
             >
               <Image
-                alt="linkedIn"
+                alt={name}
                 width={32}
                 height={32}
                 src={`/images/${imageName}`}
@@ -27,6 +29,7 @@ const Social = ({url, name, imageName}: {url: string, name: string, imageName: s
                 showText ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ pointerEvents: 'none', height: showText ? 'auto' : 0 }}
+              aria-hidden={!showText}
             >
               {name}
             </p>

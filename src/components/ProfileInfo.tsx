@@ -7,7 +7,7 @@ const ProfileInfo = ({data}: {data: any}) => {
     const profile = data.items[0].fields
 
 return (
-  <div>
+  <div aria-label="Profile Information">
     <div className="flex items-center">
       <motion.div
         initial={{ opacity: 0, x: '-300px' }}

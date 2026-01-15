@@ -52,9 +52,9 @@ const ProjectComponent = ({
 
   return (
     <motion.div className="flex flex-col max-w-6xl justify-center items-center">
-      <div className="flex w-full justify-center ml:justify-start">
+      <div className="flex w-full justify-center ml:justify-start" role="group" aria-label="Project Header">
         {data.projectUrl ? (
-          <Link href={data.projectUrl} target="_blank">
+          <Link href={data.projectUrl} target="_blank" aria-label={`Visit ${data.title} website`}>
             <h3 className="text-[28px] text-center md:text-[34px] my-2 mb-4 origin-bottom font-bold transition-all duration-700 transform hover:scale-101 ease-in-out ease-in-out hover:text-blue-400">
               {data.title}
             </h3>
@@ -66,7 +66,7 @@ const ProjectComponent = ({
         )}
 
         {data.githubUrl ? (
-          <Link href={data.githubUrl} target="_blank">
+          <Link href={data.githubUrl} target="_blank" aria-label={`View ${data.title} on GitHub`}>
             <p className="mt-7 ml-4 font-bold transition-all duration-700 origin-bottom transform ease-in-out ease-in-out hover:text-blue-400">
               GitHub
             </p>
@@ -82,6 +82,10 @@ const ProjectComponent = ({
             onClick={handleImageClick}
             onMouseEnter={() => setShowHoverPopup(true)} // Show popup on hover
             onMouseLeave={() => setShowHoverPopup(false)} // Hide popup when hover ends
+            role="button"
+            tabIndex={0}
+            aria-label={`Open full screen image for ${data.title}`}
+            onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') handleImageClick() }}
           >
             {isMedium ? (
               <Image
@@ -137,20 +141,24 @@ const ProjectComponent = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${data.title} full screen image modal`}
           >
             <div className="relative">
               <button
-                aria-label="Close Modal"
+                aria-label="Close modal"
                 className="absolute top-4 right-4 text-white bg-black bg-opacity-60  px-[10px] py-[5px] rounded-md text-2xl z-20 pointer-events-auto"
                 onClick={handleCloseModal} // Close modal on button click
+                tabIndex={0}
               >
                 ✕
               </button>
               {/* Modal Image with Loading Spinner */}
               <div className="relative w-screen flex justify-center items-center">
                 {imgLoading && (
-                  <div className="absolute inset-0 flex justify-center items-center z-10 pointer-events-none">
-                    <div className="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                  <div className="absolute inset-0 flex justify-center items-center z-10 pointer-events-none" aria-live="polite" aria-busy="true">
+                    <div className="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin" aria-label="Loading image"></div>
                   </div>
                 )}
                 <Image
@@ -158,7 +166,7 @@ const ProjectComponent = ({
                   width={1920}
                   height={1080}
                   quality={100}
-                  alt="Expanded project image"
+                  alt={`Full screen image for ${data.title}`}
                   className={`rounded-md w-screen h-auto max-h-screen object-contain ${
                     imgLoading ? 'opacity-0' : 'opacity-100'
                   } transition-opacity duration-500`}
@@ -172,6 +180,7 @@ const ProjectComponent = ({
                     href={data.projectUrl}
                     target="_blank"
                     className="text-white text-md lg:text-lg font-bold bg-gradient-to-br from-blue-300 via-blue-500 via-purple-400 to-indigo-600 px-2 py-1 lg:px-4 lg:py-2 rounded-md ring-white/20 origin-bottom transform hover:scale-103 transition-all duration-300"
+                    aria-label={`Visit ${data.title} website`}
                   >
                     Visit This Website
                   </Link>
